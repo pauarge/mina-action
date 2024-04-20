@@ -1,8 +1,8 @@
 # action.yml
-name: "Mina Deploy"
+name: "Action for Mina Deploy"
 description: "Deploy Ruby 3.3.0 usign mina"
 branding:
-  icon: "arrow-up-circle"
+  icon: "arrow-right-circle"
   color: "red"
 inputs:
   ssh_private_key: # id of input
