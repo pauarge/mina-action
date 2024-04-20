@@ -1,19 +1,12 @@
 #!/bin/sh -l
 
-if [$INPUT_DEBUG]
-then
-    DEBUG_FLAG="--verbose"
-else
-    DEBUG_FLAG=""
-fi
-
 log() {
   echo ">> [mina-action]" $@
 }
 
 minaDeploy() {
-  log "Running mina $INPUT_ENVIRONMENT $INPUT_COMMAND $DEBUG_FLAG"
-  /usr/local/bundle/bin/mina $INPUT_ENVIRONMENT $INPUT_COMMAND $DEBUG_FLAG
+  log "Running mina $INPUT_ENVIRONMENT $INPUT_COMMAND"
+  /usr/local/bundle/bin/mina $INPUT_ENVIRONMENT $INPUT_COMMAND
 }
 
 configureSSH() {
