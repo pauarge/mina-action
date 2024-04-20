@@ -1,25 +1,25 @@
 # action.yml
-name: 'Simple mina deploy'
-description: 'Deploy ruby 2.5.0 usign mina'
+name: "Mina Deploy"
+description: "Deploy Ruby 3.3.0 usign mina"
 branding:
-  icon: 'arrow-up-circle'
-  color: 'red'
+  icon: "arrow-up-circle"
+  color: "red"
 inputs:
-  ssh_private_key:  # id of input
-    description: 'Private key that can access servers'
+  ssh_private_key: # id of input
+    description: "Private key that can access servers"
     required: true
-    default: '---empty---'
-  command:  # id of input
-    description: 'Command to run on mina deployer'
+    default: "---empty---"
+  command: # id of input
+    description: "Command to run on mina deployer"
     required: true
-    default: 'deploy'
-  environment:  # id of input
-    description: 'Environment where command as to be runned'
+    default: "deploy"
+  environment: # id of input
+    description: "Environment where command as to be runned"
     required: false
-    default: ''
+    default: ""
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "docker"
+  image: "Dockerfile"
   args:
     - ${{ inputs.ssh_private_key }}
     - ${{ inputs.environment }}
