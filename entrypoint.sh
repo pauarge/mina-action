@@ -12,6 +12,7 @@ minaDeploy() {
 configureSSH() {
   log "Configuring SSH."
   eval `ssh-agent -s`
+  echo "${INPUT_SSH_PRIVATE_KEY}" | ssh-add -
 }
 
 cleanup() {
