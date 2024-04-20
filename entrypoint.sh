@@ -18,8 +18,6 @@ minaDeploy() {
 
 configureSSH() {
   log "Configuring SSH."
-  mkdir -p ~/.ssh/ && touch ~/.ssh/known_hosts
-  ssh-keyscan "${INPUT_HOSTNAME}" >> ~/.ssh/known_hosts
   eval `ssh-agent -s`
 }
 
