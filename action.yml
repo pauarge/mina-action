@@ -1,10 +1,14 @@
 # action.yml
 name: "Action for Mina Deploy"
-description: "Deploy Ruby 3.3.0 usign mina"
+description: "Deploy Ruby 3.3.0 using mina"
 branding:
   icon: "arrow-right-circle"
   color: "red"
 inputs:
+  hostname: # ip or address
+    description: "Host where to deploy"
+    required: true
+    default: ""
   ssh_private_key: # id of input
     description: "Private key that can access servers"
     required: true
@@ -17,10 +21,16 @@ inputs:
     description: "Environment where command as to be runned"
     required: false
     default: ""
+  debug: # run mina in debug mode
+    description: "Turn on verbose Mina deploy"
+    required: false
+    default: false
 runs:
   using: "docker"
   image: "Dockerfile"
   args:
+    - ${{ inputs.hostname }}
     - ${{ inputs.ssh_private_key }}
     - ${{ inputs.environment }}
     - ${{ inputs.command }}
+    - ${{ inputs.debug }}

@@ -5,17 +5,25 @@ It's is based on ruby:2.5.0 docker image. If you want to run with another versio
 
 ## Inputs
 
-## `ssh_private_key`
+### `hostname`
+
+**Required** Host where to deploy.
+
+### `ssh_private_key`
 
 **Required** This is the private ssh key that can access server. Save it to github secrets!
 
-## `command`
+### `command`
 
 **Required** Mina command to run. 'deploy' for 'mina deploy'.
 
-## `environment`
+### `environment`
 
-**Required** This is environment to deploy. If not provided it runs 'mina deploy' command.
+This is environment to deploy. If not provided it runs 'mina deploy' command.
+
+### `debug`
+
+Turn on verbose Mina deploy
 
 ## Example usage
 
