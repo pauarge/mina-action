@@ -1,6 +1,6 @@
-# action.yml
 name: "Action for Mina Deploy"
-description: "Deploy Ruby 3.3.0 using mina"
+author: "Pau Argelaguet"
+description: "Deploy Ruby using mina"
 branding:
   icon: "arrow-right-circle"
   color: "red"

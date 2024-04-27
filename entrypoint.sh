@@ -1,7 +1,7 @@
 #!/bin/sh -l
 
 log() {
-  echo ">> [mina-action]" $@
+  echo ">> [mina-deploy-action]" $@
 }
 
 minaDeploy() {
@@ -21,6 +21,6 @@ cleanup() {
 }
 trap cleanup EXIT
 
-log "Starting mina action."
+log "Starting mina deploy action."
 configureSSH
 minaDeploy
